@@ -6,11 +6,17 @@ import { Recipe } from './recipe';
   templateUrl: './recipe-list.component.html'
 })
 export class RecipeListComponent implements OnInit {
-  recipes: Recipe[] = [];
+  recipes: Recipe[] = [
+    new Recipe('Test recipe', 'Yummy',
+      'https://www.goodfood.com.au/content/dam/images/h/0/f/a/q/i/image.related.wideLandscape.940x529.h0fa4n.png/1515456591895.jpg',
+      []
+    ),
+    new Recipe('Recipe 2', 'Dummy',
+      'https://www.goodfood.com.au/content/dam/images/h/1/4/3/d/c/image.related.articleLeadwide.620x349.h1bm3m.png/1551157110037.jpg',
+      []
+    )
+  ];
   @Output() recipeSelected = new EventEmitter<Recipe>();
-  recipe = new Recipe('Test recipe', 'Yummy',
-    'https://www.sgs.com.ng/-/media/global/images/structural-website-images/hero-images/hero-agri-food.jpg?la=en&hash=DC665548B14BB9BE2FC839EE6E628FB26033CB94'
-  );
 
   constructor() { }
 
